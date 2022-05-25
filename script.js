@@ -22,3 +22,24 @@ console.log (21 % 4)
 console.log (5 * 5 * 5)
 console.log (5 ** 3) 
 console.log(2 + 2 == 2 * 2)
+
+//Checking of data types
+console.log(typeof 'Olawumi Ladele')
+console.log(typeof 10)
+console.log(typeof true)
+console.log(typeof null)
+console.log(typeof undefined)
+
+
+//Variables
+/*
+let firstName = 'Olawumi'
+let lastName = 'Ladele'
+let country = 'Nigeria'
+let state = 'Lagos'
+let age = 100
+let isMarried = false
+
+console.log(firstName, lastName, country, state, age, isMarried)
+*/
+

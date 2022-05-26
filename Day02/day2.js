@@ -172,4 +172,105 @@ let newJob = ' Medical Practitioner '
 console.log(newJob) // output =  Medical Practitioner
 console.log(newJob.trim(' '))  // output = Medical Practitioner
 
-//9. includes() takes a substring argument abd checks if th substring argument xists in the string. It returns a boolean value.
+//9. includes() takes a substring argument abd checks if the substring argument exists in the string. It returns a boolean value.
+console.log(job.includes('assistant')) //output = false
+console.log(job.includes('Logistics')) // output = true
+console.log(newJob.includes('Medical')) // output = true
+console.log(newJob.includes('practitioner')) // output =false
+
+
+//10. replace() takes old substring and the new substrings as parameter.
+//syntax === variableName.replace('oldsubstring',' newaubstring')
+
+let aJob = 'Medical Practitioner'
+let aCountry = 'Greenland'
+console.log(aJob.replace('Practitioner', 'Doctor')) // output = Medical Doctor
+console.log(aCountry.replace('Green', 'Is')) // output = Island
+
+//11. charAt() takes an index and returns the value of that index
+//syntax ==== variableName.charAt(index)
+
+let newLastIndex = job.length-1
+console.log(job.charAt(4)) // output = s
+console.log(job.charAt(newLastIndex)) // output = r
+
+//12. charCodeAt() takes an index and returns the char code (ASCII number) of the value at that index
+//syntax === variableName.charCodeAt(index)
+
+let lastCharIndex = job.length-1
+console.log(job.charCodeAt(0)) // output = 65
+console.log(job.charCodeAt(4)) // output = 115
+console.log(job.charCodeAt(1)) // output = 115
+console.log(job.charCodeAt(22)) // output = 102
+console.log(job.charCodeAt(lastCharIndex)) // output = 114
+
+//13. index() takes a substring and if the substring exists in a string, it returns the first position of the first substring, otherwise, it returns -1
+//syntax === variableName.indexOf(substring)
+
+console.log(job.indexOf('S')) // output = -1
+console.log(job.indexOf('s')) // output = 1
+console.log(job.indexOf('logistics')) // output = -1
+console.log(job.indexOf('Logistics')) // output = 10
+console.log(job.indexOf('Officer')) // output = 20
+console.log(job.indexOf('officer')) // output = -1
+
+//14. lastIndexOf() takes a substring and if the substring exists in a string it returns the last position of the substring, otherwise, it returns -1
+//syntax === variableName.lastIndexOf(substring)
+
+let note = 'I love Jesus. If you do not love Jesus, who else is there to love?'
+console.log(note.lastIndexOf('love')) // output = 61
+console.log(note.lastIndexOf('Jesus')) // output = 33
+console.log(note.lastIndexOf('If')) // output = 14
+console.log(note.lastIndexOf('if')) // output = -1
+console.log(note.lastIndexOf('who')) // output = 40
+
+let newNote = 'Let\'s do this'
+let anotherNote = 'Lets do that'
+console.log(newNote.lastIndexOf('this')) // output = 9
+console.log(anotherNote.lastIndexOf('this')) // output = 8
+console.log(anotherNote.lastIndexOf('l')) // output = -1
+console.log(anotherNote.lastIndexOf('L')) // output = 0
+console.log(anotherNote.lastIndexOf('d')) // output = 5
+console.log(anotherNote.lastIndexOf('do')) // output = 5
+console.log(anotherNote.lastIndexOf('s')) // output = 3
+console.log(anotherNote.lastIndexOf('that')) // output = 8
+console.log(anotherNote.lastIndexOf('Lets')) // output = 0
+
+let hisString = 'I love JavaScript. If you do not love JavaScript what else can you love.'
+console.log(hisString.lastIndexOf('.')) // output = 17
+console.log(hisString.lastIndexOf('If')) // output = 19
+console.log(hisString.lastIndexOf('JavaScript')) // output = 38
+console.log(hisString.lastIndexOf('else')) // output = 54
+console.log(hisString.lastIndexOf('love')) // output = 67
+console.log(hisString.lastIndexOf('you')) // output = 63
+
+//15. concat() takes many substrings and joins them together.
+//syntax === variableName.concat(substring, substring, substring, ...)
+
+let string = '30'
+console.log(string.concat('Days','Of', 'JavaScript')) // output = 30DaysOfJavaScript
+
+let anotherCountry = 'South'
+console.log(anotherCountry.concat('Korea'))
+
+//16. startsWith(): it takes a substring as an argument and it checks if the string starts with that specified substring. It returns a boolean
+//syntax === variableName.startsWith(substring)
+
+let thisString = 'Jesus is the best Lover in this world.'
+console.log(thisString.startsWith('is'))  // output = false
+console.log(thisString.startsWith('Jesus'))  // output = true
+console.log(thisString.startsWith('jesus'))  // output = false
+console.log(thisString.startsWith('.'))  // output = false
+
+//17. endsWith(): it takes a substring as an argument and it checks if the string ends with that specified substring. It returns a boolean
+//syntax === variableName.endsWith(substring)
+
+let makeString = 'Perfect love casts out fear!'
+console.log(makeString.endsWith('fear')) // output = false
+console.log(makeString.endsWith('!')) // output = true
+
+//18. search() takes a substring as an argument and it returns the index of the first match. The search value can be a string or a regular expression pattern.
+
+let searchString = 'I love Jesus. If you do not love Jesus, who else is there to love?'
+console.log(searchString.search('Jesus')) // output = 7
+console.log(searchString.search('t')) // output = 26

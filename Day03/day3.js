@@ -118,3 +118,54 @@ let check7 = !(7 > 4) //returns false
 let isLightOn = true  
 let isLightOff = !isLightOn //returns false
 let isMarried = !false //returns true
+
+//Increment operator - in JS, the increment operator is used to increase a value stored in a variable. This can be pre or pose increment.
+//Pre increment
+let count = 0
+console.log(count) //returns 0
+console.log(++count) //returns 1
+console.log(count) //returns 1
+
+//Post Increment is mostly used
+let count1 = 0
+console.log(count1) //returns 0
+console.log(count1++) //returns 0 
+console.log(count1) //returns 1
+
+//Decrement operator - in JS, the decrement operator is used to reduce a value stored in a variable. Thic can b epre or post decrement.
+//Pre decrement
+let count2 = 0
+console.log(count2) //returns 0
+console.log(--count2) //returns -1
+console.log(count2) //returns -1
+
+//Post Decrement
+let count3 = 0
+console.log(count3) //returns 0
+console.log(count3--) //returns 0
+console.log(count3) //returns -1
+
+//Tenary operators - is used to write a condition.
+
+let isRaining = true
+isRaining 
+    ? console.log('You need an umbrella') //returns this since isRaining is said to be true
+    : console.log('No need for the umrella') 
+
+isRaining = false
+isRaining
+    ? console.log('You need a raincoat')
+    : console.log('No need for a raincoat') //returns this since isRaining is said to be false
+
+let number = 5
+number > 0
+    ? console.log(`${number} is a positive number`) //returns 5 is a positive number
+    : console.log(`${number} is a negative number`)
+
+number = -5
+number > 0
+    ? console.log(`${number} is a positive number`)
+    : console.log(`${number} is a negative number`) //returns -5 is a negative number
+
+
+//Operator precedence

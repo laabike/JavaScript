@@ -167,7 +167,7 @@ console.log(countries.split()) // output = ['Nigeria, Ghana, Egypt, South Africa
 console.log(countries.split(' ')) // output = ['Nigeria', 'Ghana', 'Egypt', 'South Africa', 'and', 'Benin']
 console.log(countries.split('')) // output  ['N', 'i', 'g', 'e', 'r', 'i', 'a', ',', ' ', 'G', 'h', 'a', 'n', 'a', ',', ' ', 'E', 'g', 'y', 'p', 't', ',', ' ', 'S', 'o', 'u', 't', 'h', ' ', 'A', 'f', 'r', 'i', 'c', 'a', ' ', 'a', 'n', 'd', ' ', 'B', 'e', 'n', 'i', 'n', '.']
 
-//8. Trim() is used to remove trailing spaces in the beginning or the end of a word.
+//8. trim() is used to remove trailing spaces in the beginning or the end of a word.
 let newJob = ' Medical Practitioner '
 console.log(newJob) // output =  Medical Practitioner
 console.log(newJob.trim(' '))  // output = Medical Practitioner
@@ -270,7 +270,216 @@ console.log(makeString.endsWith('fear')) // output = false
 console.log(makeString.endsWith('!')) // output = true
 
 //18. search() takes a substring as an argument and it returns the index of the first match. The search value can be a string or a regular expression pattern.
-
+//syntax === string.search(substring)
 let searchString = 'I love Jesus. If you do not love Jesus, who else is there to love?'
 console.log(searchString.search('Jesus')) // output = 7
 console.log(searchString.search('t')) // output = 26
+
+//19. match() takes a substring or regular expression pattern as an argument and returns an array if there is match otherwise, it returns null. Let us see how a regular expression pattern looks like. It starts with / sign and ends with / sign.
+//syntax === variableName.match(substring)
+
+let loveOne = /love/
+let JesusOne = /Jesus/g
+let JesusTwo = /Jesus/gi //where g means to search in the whole text, i means case sensitive
+let LoveTwo = /love/gi
+
+console.log(note.match('love')) //output = ['love', index: 2, input: 'I love Jesus. If you do not love Jesus, who else is there to love?', groups: undefined]
+console.log(note.match(loveOne)) //output = ['love', index: 2, input: 'I love Jesus. If you do not love Jesus, who else is there to love?', groups: undefined]
+console.log(note.match(JesusOne)) //output = (2) ['Jesus', 'Jesus']
+console.log(note.match(JesusTwo)) //output = (2) ['Jesus', 'Jesus']
+console.log(note.match(LoveTwo)) //output = (3) ['love', 'love', 'love']
+
+let hisTxt = 'In 2019, I ran 30 Days of Python. Now, in 2020 I am super exited to start this challenge'
+let regEx = /\d+/
+
+// d with escape character means d not a normal d instead acts a digit
+// + means one or more digit numbers,
+// if there is g after that it means global, search everywhere.
+
+console.log(hisTxt.match(regEx))  // ['2019', index: 3, input: 'In 2019, I ran 30 Days of Python. Now, in 2020 I am super exited to start this challenge', groups: undefined]
+console.log(hisTxt.match(/\d+/g)) // ["2019", "30", "2020"]
+console.log(hisTxt.match(regEx)) // ['2019', index: 3, input: 'In 2019, I ran 30 Days of Python. Now, in 2020 I am super exited to start this challenge', groups: undefined]
+
+//20. repeat() takes a number as an argument and returns the repeated version of the string
+//syntax === variableName.repeat()
+
+let eg = 'Jesus'
+console.log(eg.repeat(10)) // JesusJesusJesusJesusJesusJesusJesusJesusJesusJesus
+
+// Checking Data Types and Casting
+// use typeof to check the data type of a certain variable as done in index.html
+// casting - changing data types means convertin gone data type to another data type.
+// This is done by using parseInt(), parseFloat(), Number(), + sign, str().
+// When doing arithmetic operations string numbers should be first converted to integer or float if not it returns an error.
+//String to integer (any number inside a quote is a string). This is done using either; parseInt(), Number(), + sign.
+
+let number = '15'
+let numberInt = parseInt(number) 
+let numInt = Number(number)
+let aNewInt = +number
+console.log(numberInt) //15
+console.log(numInt) //15
+console.log(aNewInt) //15
+console.log(typeof numInt) //number
+
+//string to float (any float number inside a quote is a string float number. An example of a string float number: '9.81', '3.14', etc).
+//this is done using; parseFloat(), Number(), + sign.
+
+let newNum = '23.4'
+let floatNum = parseFloat(newNum)
+let floatNum2 = Number(newNum)
+let floatNum3 = +newNum
+console.log(floatNum) //23.4
+console.log(floatNum2) //23.4
+console.log(floatNum3) //23.4
+console.log(typeof floatNum2) //number
+
+// float to integer. This is done using parseInt()
+let aNewFltNum = '25.9'
+let floatInt = parseInt(newNum)
+let floatNewNum = parseInt(aNewFltNum)  
+console.log(floatInt)  //23
+console.log(floatNewNum) // 25
+
+
+//DAY 2 EXERCISES
+//Level1
+//1.
+let challenge = '30 Days of JavaScript'
+//2.
+console.log(challenge) // output = 30 Days of JavaScript
+//3.
+console.log(challenge.length) // output = 21
+//4.
+console.log(challenge.toUpperCase()) //output = 30 DAYS OF JAVASCRIPT
+//5. 
+console.log(challenge.toLowerCase()) //output = 30 days of javascript
+//6.
+console.log(challenge.substr(3,5))
+console.log(challenge.substring(3,7)) //outputs = days
+//7. 
+console.log(challenge.slice(3,25)) //output = Days of JavaScript
+//8.
+console.log(challenge.includes('Script')) //output = true
+//9.
+console.log(challenge.split()) // output = ['30 Days of JavaScript']
+//10.
+console.log(challenge.split(" ")) //output = (4) ['30', 'Days', 'of', 'JavaScript']
+//11.
+let socialMedia = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
+console.log(socialMedia.split(" ")) //output = (7) ['Facebook,', 'Google,', 'Microsoft,', 'Apple,', 'IBM,', 'Oracle,', 'Amazon']
+//12.
+console.log(challenge.replace('JavaScript', 'Python')) //output = 30 Days of Python
+//13.
+console.log(challenge.charAt(15)) //output = S
+//14.
+console.log(challenge.charCodeAt(11)) // output = 74
+//15.
+console.log(challenge.indexOf('a')) // output = 4
+//16.
+console.log(challenge.lastIndexOf('a')) // output = 14
+//17.
+let newSentence = 'You cannot end a sentence with because because because is a conjunction'
+console.log(newSentence.indexOf('because')) // output = 31
+//18.
+console.log(newSentence.lastIndexOf('because')) // output = 47
+//19.
+console.log(newSentence.search('because')) // output = 31
+//20.
+let trailSpace =  ' 30 Days Of JavaScript '
+console.log(trailSpace.trim(' ')) // output = 30 Days Of JavaScript
+//21.
+console.log(challenge.startsWith("30")) // output = true
+//22.
+console.log(challenge.endsWith('t')) // output = true
+//23.
+let thisChallenge = /a/gi
+console.log(challenge.match(thisChallenge)) //output = (3) ['a', 'a', 'a']
+console.log(challenge.match(/a/gi)) //output = (3) ['a', 'a', 'a']
+//24.
+let aNewChallenge = '30 Days of'
+console.log(aNewChallenge.concat('JavaScript')) //output = 30 Days ofJavaScript
+//25.
+console.log(challenge.repeat(2)) //output = 30 Days of JavaScript30 Days of JavaScript
+
+//level2
+//1.
+let challengeText = "The quote \'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes. teaches us to help one another."
+console.log(challengeText) // output = The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes. teaches us to help one another.
+//2. 
+let challengeTextNew = '\"Love is not patronizing and charity isn\'t about pity, it is about love. Charity and love are the same -- with charity you give love, so don\'t just give money but reach out your hand instead."'
+console.log(challengeTextNew) //output = "Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead."
+//3.
+let aNewNum = '10'
+let normalNum = 10
+let numberIntaNewNum = +aNewNum
+console.log(typeof '10') // output = string
+console.log(typeof 10) //output = number
+console.log(typeof numberIntaNewNum) //output = number
+//4.
+let challengeNum = '9.8'
+let parseChallengeNum = +challengeNum
+let roundupchallengeNum = Math.ceil(parseChallengeNum)
+console.log(parseChallengeNum) // output = 9.8
+console.log(roundupchallengeNum) // output = 10
+//5.
+let text1 = 'python'
+let text2 = 'jargon'
+console.log(text1.search('on')) //output = 4
+console.log(text2.search('on')) // output = 4 
+//6.
+let jargonText = 'I hope this course is not full of jargon'
+console.log(jargonText.includes('jargon')) // output = true
+console.log(jargonText.match('jargon')) // output = ['jargon', index: 34, input: 'I hope this course is not full of jargon', groups: undefined]
+//7. 
+let newRndmNum = Math.random()
+let rndmNumBtwn100 = newRndmNum * 101
+console.log(rndmNumBtwn100) // output = 100.31489483967543
+/*8.
+let anotherRndmNum = Math.random()
+let rndmNumLimit = Math.
+let rndmNumBtw50And100 = Math.floor(anotherRndmNum) * 
+console.log(rndmNumBtw50And100)
+*/
+//9 
+let aRndNum = Math.random()
+let aRndNumBtw255 = aRndNum * 256
+console.log(aRndNumBtw255) // output = 212.008122527433
+//10
+let jsCharResult = []
+let jsChar = 'JavaScript'
+let jsCharLength = jsChar.length
+let jsCharRndNum  = (jsChar.charAt(Math.floor(Math.random())))
+console.log(jsCharRndNum)
+//console.log(jsCharRndNum)
+
+//11.
+console.log('\t1\t1\t1\t1\t1\n\t2\t1\t2\t4\t8\n\t3\t1\t3\t9\t27\n\t4\t1\t4\t16\t64\n\t5\t1\t5\t25\t125') /* output = 	
+1	1	1	1	1
+2	1	2	4	8
+3	1	3	9	27
+4	1	4	16	64
+5	1	5	25	125*/
+//12.
+console.log(newSentence.substr(31,24)) // output = because because because 
+
+//Levl3
+//1.
+let newWord = "\'Love is the best thing in this world. Some found their love and some are still looking for their love.' Count the number of word love in this sentence."
+let newWordG = /love/gi
+console.log(newWord.match(newWordG)) // output = (4) ['Love', 'love', 'love', 'love']
+//2.
+let newSentenceG = /because/gi
+console.log(newSentence.match(newSentenceG)) // output = (3) ['because', 'because', 'because']
+//3.
+let regularJunk = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching'
+
+
+//4.
+let incomeText = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+let incomeNum = /\d+/g
+let annualIncome = incomeText.match(incomeNum) * 12
+console.log(incomeText.match(incomeNum)) // output = (3) ['5000', '10000', '15000']
+console.log((5000+15000)* 12 + 10000) // output = 250000
+
+//Clean the following text and find the most frequent word (hint, use replace and regular expressions).

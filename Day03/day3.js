@@ -168,4 +168,86 @@ number > 0
     : console.log(`${number} is a negative number`) //returns -5 is a negative number
 
 
-//Operator precedence
+//Operator precedence - determines how operators are parsed concerning each other. Operators with higher precedence become the operands of operators with lower precedence.
+console.log(3 + 4 * 5) // returns = 23
+console.log(4 * 3 ** 2) // returns = 36
+console.log(4 + (3 * 2)) // returns = 10 because parentheses here are superfluous
+console.log((6 + 6) * 3) // returns = 36 because parantheses changes the order
+
+//Window methods
+//Windows alert() method - is an builtin method and it displays an alert box with a spcified message and an ok button. Do not use too much alert because it is destructing and annoying, use it just to test.
+//syntax === alert('message')
+//alert('Welcome to My 30DaysOfJavaScript Challenge')
+
+//Window prompt() method - displays a prompt box with an input on the browser to tak einput vslue and the input data can be stored in a variable. It takes two arguments with the second argument being optional.
+//syntax === prompt('required text', 'optional text')
+
+//let theNumber = prompt('Enter number', 'your number goes here')
+console.log('newNumber')
+
+//Window confirm() method - displays a dialog box with a specified message, along with an Ok and a cancel button. It is often used to ask permission from a user to execute something. It takes a string as an argument; clicking the Ok yields true value, whereas clicking the cancel button yields false value.
+
+//const agree = confirm ('Are you sure you want to delete this?')
+console.log('agree')
+
+//Date Object
+//The method used to get a date and time information on JS starts with the word get because it provides the information.
+//getFullYear() - gets the yeear as a four digit number (yyyy)
+//getMonth() - gets the month as a number (0-11)
+//getDate() - gets the day as a number (1 -31)
+//getDay() . gets the weekday as a number (0-6)
+//getHours() - gets the hour (0-23)
+//getMinutes() - gets the minutes (0-59)
+//getSeconds() - gets the secoond (0-59) 
+//getMilliseconds() - gets the millisecond (0-999)
+//getTime() - gets the time (millisconds since January 1, 1970).
+//\Asabeneh\30-Days-Of-JavaScript\blob\master\images\date_time_object.png
+//creating a time object
+const newNow = new Date()
+console.log(newNow) // returns = Mon Jun 06 2022 23:19:37 GMT+0100 (West Africa Standard Time)
+
+//getting the full from a time object
+const aNewNow = new Date ()
+console.log(aNewNow.getFullYear()) // returns = 2022
+
+//getting the month from a time object
+const anotherNewNow = new Date ()
+console.log(anotherNewNow.getMonth()) // returns = 5 because the month is June
+
+//getting the day of the month from a time object
+const aNewNow1 = new Date ()
+console.log(aNewNow1.getDate()) //returns = 6 'cos day of the month is 6th
+
+//getting the day of the week from a time object
+const aNewNow2 = new Date ()
+console.log(aNewNow2.getDay()) //returns = 1 'cos of the week is Monday
+
+//getting the hour from a time object
+const aNewNow3 = new Date ()
+console.log(aNewNow3.getHours()) // returns = 23 'cos it's 11pm
+
+//getting the minutes from a time object
+const aNewNow4 = new Date()
+console.log(aNewNow4.getMinutes()) //returns = 58
+
+//getting the seconds from the time object
+const aNewNow5 = new Date()
+console.log(aNewNow5.getSeconds()) //returns = 50
+
+//geting time - this method gives time in milliseconds from January 1, 1970. It is also known as Unix time. This can be gotten in two ways;
+//1. using getTime()
+const aNewNow6 = new Date()
+console.log(aNewNow6.getTime()) //returns = 1654556566774
+
+//2. using Date.now()
+const allSeconds = Date.now()
+console.log(allSeconds) //returns = 1654556672064
+
+//formating this values to a human readable time format. Example
+const nNow = new Date()
+const year = nNow.getFullYear()
+const month = nNow.getMonth() + 1
+const date = nNow.getDate()
+const hours = nNow.getHours()
+const minutes = nNow.getMinutes()
+console.log(`${date}/${month}/${year} ${hours}:${minutes}`) //returns = 7/6/2022 0:13

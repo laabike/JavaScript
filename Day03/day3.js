@@ -247,6 +247,7 @@ console.log(allSeconds) //returns = 1654556672064
 const nNow = new Date()
 const year = nNow.getFullYear()
 const month = nNow.getMonth() + 1
+const day = nNow.getDay()
 const date = nNow.getDate()
 const hours = nNow.getHours()
 const minutes = nNow.getMinutes()

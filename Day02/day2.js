@@ -308,7 +308,7 @@ console.log(eg.repeat(10)) // JesusJesusJesusJesusJesusJesusJesusJesusJesusJesus
 
 // Checking Data Types and Casting
 // use typeof to check the data type of a certain variable as done in index.html
-// casting - changing data types means convertin gone data type to another data type.
+// casting - changing data types means converting one data type to another data type.
 // This is done by using parseInt(), parseFloat(), Number(), + sign, str().
 // When doing arithmetic operations string numbers should be first converted to integer or float if not it returns an error.
 //String to integer (any number inside a quote is a string). This is done using either; parseInt(), Number(), + sign.
